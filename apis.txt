@@ -1,0 +1,6 @@
+uvicorn APIGateway.main:app --reload --port 8000
+uvicorn Services.LoadDatasetService.main:app --reload --port 8001
+uvicorn Services.TextProccissingService.main:app --reload --port 8002
+uvicorn Services.IndexingService.main:app --reload --port 8003
+uvicorn Services.MatchingRankingService.main:app --reload --port 8004
+uvicorn Services.ReadUserQueryService.main:app --reload --port 8005

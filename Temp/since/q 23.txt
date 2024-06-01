@@ -1,0 +1,6 @@
+"query": "Whats the difference between a confidence interval and a credible interval?"
+
+"answer_pids": [40977, 40982, 41037, 41038, 41250, 46338, 66117, 96736, 117800]
+
+test 5
+retrivedDocsIds :  [154237, 47902, 46555, 53231, 163519, 181015, 123718, 73537, 138000, 138005]

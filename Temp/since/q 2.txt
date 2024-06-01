@@ -1,0 +1,7 @@
+
+
+"query": "What is the difference between likelihood and probability?"
+
+"answer_pids": [41203, 41205, 41206, 41207, 41208, 41215, 63496, 100287, 131979, 156788, 161440]
+
+ test 5: retrivedDocsIds :  [181195, 102022, 111410, 110458, 113115, 127247, 101219, 154500, 85941, 173124]

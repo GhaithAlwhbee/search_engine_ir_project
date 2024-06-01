@@ -1,0 +1,7 @@
+"query": "How to choose the number of hidden layers and nodes in a feedforward neural network?"
+
+"answer_pids": [39543, 40179, 41011, 87873, 99324, 100999, 103532, 127837, 
+130893, 133585, 140634]
+
+retrivedDocsIds :  [125957, 301400, 84739, 138683, 308510, 117897, 135629, 
+304746, 310085, 313829]

@@ -1,0 +1,7 @@
+Why do we need sigma-algebras to define probability spaces?
+
+"answer_pids": [104171, 104174, 152506, 166946]
+
+test 5
+retrivedDocsIds :  [156698, 143475, 139322, 116817, 52589, 51455, 97482, 115470, 150174, 119031]
+

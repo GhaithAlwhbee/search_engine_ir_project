@@ -1,0 +1,144 @@
+
+lLifestyle dataset
+
+test 1
+text proccissing : 3:53
+vectorizer = TfidfVectorizer(
+                                lowercase=True,
+                                # max_features=5000,
+                                max_df=0.5,
+                                min_df=5,
+                                ngram_range = (1,1),
+                                stop_words = "english"
+
+                            )
+indexing : 0:15
+matrix_data size : 161 mb
+vectorizer : 5.49 mb
+
+evaluation: 21%
+
+________
+
+test 2
+text proccissing : 3:30
+vectorizer = TfidfVectorizer(
+                                lowercase=True,
+                                # max_features=5000,
+                                max_df=0.5,
+                                min_df=5,
+                                ngram_range = (1,3),
+                                stop_words = "english"
+
+                            )
+indexing : 2:54
+matrix_data size : 280 MB
+vectorizer : 532 MB
+
+evaluation 102 qrel: 0.29 Time 5:00
+
+________
+
+test 3
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                tokenizer=my_tokenizer,
+                                lowercase=True,
+                                # max_features=5000,
+                                max_df=0.5,
+                                min_df=5,
+                                ngram_range = (1,3),
+                                stop_words = "english"
+
+                            )
+indexing : 9:30
+matrix_data size : 282 MB
+vectorizer : 534 MB
+
+evaluation 102 qrel: 0.286 Time 5:00
+
+________
+
+test 4
+test 3 + pos_tags = pos_tag(tokenized_text)
+
+
+indexing : 39
+matrix_data size : 288 MB
+vectorizer : 496 MB
+
+evaluation 102 qrel: 0.24 Time 5:20
+
+
+________
+
+test 5
+
+test 4 +
+    doc = re.sub(r'http\S+', '', doc)  # Remove URLs
+    doc = re.sub(r'<.*?>', '', doc)    # Remove HTML tags
+    doc = re.sub(r'\S+@\S+', '', doc)  # Remove email addresses
+
+indexing : 32
+matrix_data size : 288 MB
+vectorizer : 491 MB
+
+evaluation 102 qrel: 0.28 Time 5:18
+
+
+___________
+
+test 6
+n_gram(1,1)
+max_df=0.15,
+
+Text procissing : 3:00
+indexing : 0.3
+matrix_data size : 153MB
+vectorizer : 5.49MB
+
+evaluation 102 qrel:  Time 3.13
+MAP :  0.2662545388525781
+MRR :  0.2977902272019919
+ReCall :  0.19537669431245283
+
+
+___________
+
+test 7
+n_gram(1,3)
+max_df=0.15,
+
+Text procissing : 3:00
+indexing : 3:00
+matrix_data size : 272 MB
+vectorizer : 532 MB
+
+evaluation 102 qrel:  Time 3.13
+MAP :  0.2662545388525781
+MRR :  0.2977902272019919
+ReCall :  0.19537669431245283
+
+MAP :  0.21351922572089332
+MRR :  0.23847463802553606
+ReCall :  0.14933672486368962
+map evaluation execution_time is :  30.459369957447052  m
+
+
+
+###################################################################
+
+Science dataset
+
+test 5 
+
+indexing : 56
+matrix_data size : 428 MB
+vectorizer : 815 MB
+
+
+evaluation: 102 qrel: 
+MAP :  0.1361434018051665
+MRR :  0.13935963274198568
+ReCall :  0.055127428319469846
+
