@@ -24,20 +24,6 @@ async def clean_query(queryObject: Query):
         cleaned_query_response = await client.post(f"http://localhost:8002/text_proccissing/clean_query",json=queryObject.dict())
         return cleaned_query_response.json()
     
-# @app.post("/text_proccissing/clean_docs")
-# async def clean_docs(docs: list):
-#     async with httpx.AsyncClient() as client:
-#         cleaned_docs_response = await client.post(f"http://localhost:8002/text_proccissing/clean_docs", json=[doc.dict() for doc in docs])
-#         return cleaned_docs_response.json()
-    
-
-# Indexing Service API                      **********************
-
-
-
-
-
-# Matching Ranking Service API              **********************
 
 
 # read query from user Service API          **********************

@@ -9,44 +9,9 @@ import pickle
 # dataSetName = "ScienceDataset"
 dataSetName = "LifestyleDataset"
 
-# class BuildIndex:
-#     async def build_index(self):
-#         async with httpx.AsyncClient(timeout=None) as client:
-#             dataset = await client.get(f"http://localhost:8001/load_data_set/{dataSetName}")
-#             print("Dataset loaded ..")
-#             cleaned_dataset = await client.post(f"http://localhost:8002/text_proccissing/clean_docs", json=dataset.json())
-#             print("Dataset cleaned ..")
-#             index_payload = {
-#             "cleaned_docs": cleaned_dataset.json(),
-#             "dataSetName": dataSetName
-#             }
-#             await client.post(f"http://localhost:8003/indexing/vectories_docs", json=index_payload)
-#             print("Dataset vectoriesed ..")
-             
-#             # print(cleaned_dataset.json())
-#             print("tfidf_matrix build succssfully")
 
 
 class BuildIndex:
-    # async def build_index(self):
-    #     async with httpx.AsyncClient(timeout=None) as client:
-    #         dataset = await client.get(f"http://localhost:8001/load_data_set/{dataSetName}")
-    #         print("Dataset loaded ..")
-    #         cleaned_dataset = await client.post(f"http://localhost:8002/text_proccissing/clean_docs", json=dataset.json())
-    #         print("Dataset cleaned ..")
-    #         start_time = time.time()
-    #         index_payload = {
-    #         "cleaned_docs": cleaned_dataset.json(),
-    #         "dataSetName": dataSetName
-    #         }
-    #         await client.post(f"http://localhost:8003/indexing/vectories_docs", json=index_payload)
-    #         print("Dataset vectoriesed ..")
-    #         end_time = time.time()
-    #         execution_time = (end_time - start_time)/60 
-    #         print("indexing execution_time is : ",execution_time)
-             
-    #         # print(cleaned_dataset.json())
-    #         print("tfidf_matrix build succssfully")
 
     async def build_index(self):
         async with httpx.AsyncClient(timeout=None) as client:
