@@ -38,7 +38,7 @@ class MapEvaluation:
                 )
 
                 self.listOfqrel.append(qrel_query)
-                if(i>50):break
+                if(i>100):break
             print("qrel length : ",len(self.listOfqrel))
             # for x in self.listOfqrel:
             #     print(x)
