@@ -17,7 +17,7 @@ async def loadData(dataSetName: str):
                 if(len(l)>1):
                     dataset_List.append(l[1])
                 # i+=1
-                # if i>100000:
+                # if i>10000:
                 #     print ('num of docs:' ,i) 
                 #     break
         return dataset_List

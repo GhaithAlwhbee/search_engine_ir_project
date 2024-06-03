@@ -27,13 +27,13 @@ def load_ScienceDataset_matrix():
 loaded_sciencedataset_tfidf_matrix = load_ScienceDataset_matrix()
 
 # def get_similarity_docs(self,query_vector,matrix):
-    #     i=0
-    #     for vector in matrix:
-    #         cosine = cosine_similarity(vector, query_vector)
-    #         if cosine > 0.9:
-    #             print("vector ",i ,": ",vector)
-    #             print ("cosine: ",cosine)
-    #         i+=1
+#         i=0
+#         for vector in matrix:
+#             cosine = cosine_similarity(vector, query_vector)
+#             if cosine > 0.9:
+#                 print("vector ",i ,": ",vector)
+#                 print ("cosine: ",cosine)
+#             i+=1
 
     ############ 0.3 is best || 0.6 & 0.7  accept
 # @app.post("/matching/get_similarity_docs_Ids")

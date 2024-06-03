@@ -1,4 +1,12 @@
 
+cleaned_query:  {'query': 'hello world'}
+retrivedDocsIds :  [215888, 233711, 4468, 175963, 178137, 100938, 43357, 146667, 119744, 236703]
+
+cleaned_query:  {'query': 'helow world'}
+retrivedDocsIds :  [100938, 77926, 171483, 54030, 52382, 49836, 52823, 46106, 49867, 43499]
+
+
+
 lLifestyle dataset
 
 test 1
@@ -119,26 +127,406 @@ MAP :  0.2662545388525781
 MRR :  0.2977902272019919
 ReCall :  0.19537669431245283
 
+evaluation 1000 qrel
+
 MAP :  0.21351922572089332
 MRR :  0.23847463802553606
 ReCall :  0.14933672486368962
 map evaluation execution_time is :  30.459369957447052  m
 
+________________
+
+test 8
+n_gram(1,2)
+max_df=0.15,
+min_df=5,
+
+Text procissing : 
+indexing : 1.1
+matrix_data size : 312 MB
+vectorizer : 145 MB
+
+evaluation 102 qrel:  
+MAP :  0.2479212055192447
+MRR :  0.2700241207594149
+ReCall :  0.2159221347108344
+map evaluation execution_time is :  4.846187003453573  m
 
 
+
+________________
+
+test 9
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                max_features=100000,
+                                max_df=0.2,
+                                min_df=5,
+                                ngram_range = (1,2),
+                                # stop_words = "english"
+
+                            )
+
+Text procissing : 
+indexing : 1.4
+matrix_data size : 245 MB
+vectorizer : 134 MB
+
+evaluation 102 qrel:  
+MAP :  0.23465802987861806
+MRR :  0.25685885465297226
+ReCall :  0.1981442340768966
+map evaluation execution_time is :  3.322368025779724  m
+
+________________
+
+test 10
+
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                max_features=100000,
+                                max_df=0.15,
+                                min_df=5,
+                                ngram_range = (1,3),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  6.103426074981689
+matrix_data size : 206 MB
+vectorizer : 520 MB
+
+evaluation 102 qrel: 
+MAP :  0.2024509803921568
+MRR :  0.2213468720821662
+ReCall :  0.18271861938657602
+map evaluation execution_time is :  3.646637241045634  m
+
+____________
+
+test 11
+
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                # max_features=100000,
+                                max_df=0.15,
+                                min_df=5,
+                                ngram_range = (1,1),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  0.4166036367416382
+matrix_data size : 153 MB
+vectorizer : 5.49 MB
+
+evaluation 102 qrel: 
+MAP :  0.2662545388525781
+MRR :  0.2977902272019919
+ReCall :  0.19537669431245283
+map evaluation execution_time is :  3.2992665489514668  m
+
+____________
+
+test 12
+test11 + without processor
+
+indexing execution_time is :  0.2842952132225037
+matrix_data size : 153 MB
+vectorizer : 5.49 MB
+
+evaluation 102 qrel: 
+MAP :  0.2662545388525781
+MRR :  0.2977902272019919
+ReCall :  0.19537669431245283
+map evaluation execution_time is :  3.3677966674168904  m
+
+
+____________
+
+test 13
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor,
+                                tokenizer= my_tokenizer, 
+                                # lowercase=True,
+                                # max_features=100000,
+                                max_df=0.15,
+                                min_df=5,
+                                ngram_range = (1,1),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  0.2842952132225037
+matrix_data size : 153 MB
+vectorizer : 5.49 MB
+
+evaluation 102 qrel: 
+MAP :  0.2662545388525781
+MRR :  0.2977902272019919
+ReCall :  0.19537669431245283
+map evaluation execution_time is :  3.340174980958303  m
+
+
+###################################################################
+###################################################################
+###################################################################
+###################################################################
 ###################################################################
 
 Science dataset
 
-test 5 
+_______
 
-indexing : 56
-matrix_data size : 428 MB
-vectorizer : 815 MB
+test 2
+ 
+احسن بالوقت من 
+test 3
+ونفس الدقة
+
+ngram_range = (1,2),
+
+indexing : 
+matrix_data size : 440 MB
+vectorizer : 240 MB
 
 
 evaluation: 102 qrel: 
-MAP :  0.1361434018051665
-MRR :  0.13935963274198568
-ReCall :  0.055127428319469846
+
+MAP :  0.15668952303143477
+MRR :  0.1667600373482726
+ReCall :  0.048609551631314515
+map evaluation execution_time is :  5.887455844879151  m
+
+________
+
+test 3
+
+test 2 احسن
+
+ngram_range = (1,1),
+
+indexing : 
+matrix_data size : 231 MB
+vectorizer : 17.2 MB
+
+
+evaluation: 102 qrel: 
+MAP :  0.15668952303143477
+MRR :  0.1667600373482726
+ReCall :  0.048609551631314515
+map evaluation execution_time is :  6.280725276470184  m
+
+
+________
+
+test 4
+
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                # max_features=100000,
+                                max_df=0.15,
+                                min_df=5,
+                                ngram_range = (1,1),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  0.46147578159968056
+matrix_data size : 209 MB
+vectorizer : 17.2 MB
+
+
+evaluation: 102 qrel: 
+MAP :  0.15580415499533146
+MRR :  0.15406940553999376
+ReCall :  0.05985829925261116
+map evaluation execution_time is :  3.7452028433481854  m
+
+_____________
+
+test 5
+
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                # max_features=100000,
+                                max_df=0.15,
+                                min_df=5,
+                                ngram_range = (1,2),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  1.5018951455752054
+matrix_data size : 379 MB
+vectorizer : 235 MB
+
+
+evaluation: 102 qrel: 
+MAP :  0.15370895580454402
+MRR :  0.1553299097416744
+ReCall :  0.046533893894396855
+map evaluation execution_time is :  5.708561166127523  m
+
+_____________
+
+test 6
+
+vectorizer = TfidfVectorizer(
+                                # preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                # max_features=100000,
+                                max_df=0.15,
+                                min_df=5,
+                                ngram_range = (1,1),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  0.6171902497609456
+matrix_data size : 209 MB
+vectorizer : 17.2 MB
+
+
+evaluation: 102 qrel: 
+MAP :  0.15580415499533146
+MRR :  0.15406940553999376
+ReCall :  0.05985829925261116
+map evaluation execution_time is :  3.4747759620348613  m
+
+______________
+
+test 7
+
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                # max_features=100000,
+                                max_df=0.1,
+                                min_df=5,
+                                ngram_range = (1,1),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  0.5231759309768677
+matrix_data size : 200 MB
+vectorizer : 17.2 MB
+
+
+evaluation: 102 qrel: 
+MAP :  0.14615429505135388
+MRR :  0.14653750389044506
+ReCall :  0.05713498770577021
+map evaluation execution_time is :  3.2928494294484456  m
+
+
+______________
+
+test 8
+
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                # max_features=100000,
+                                max_df=0.2,
+                                min_df=5,
+                                ngram_range = (1,1),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  0.5231759309768677
+matrix_data size : 200 MB
+vectorizer : 17.2 MB
+
+
+evaluation: 102 qrel: 
+MAP :  0.15505417444755681
+MRR :  0.15411609088079675
+ReCall :  0.06143039273646936
+map evaluation execution_time is :  3.4637936393419904  m
+
+_________________
+
+test 9
+
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                # max_features=100000,
+                                max_df=0.25,
+                                min_df=5,
+                                ngram_range = (1,1),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  0.44931346575419107
+matrix_data size : 226 MB
+vectorizer : 17.2 MB
+
+
+evaluation: 102 qrel: 
+MAP :  0.1665792289137877
+MRR :  0.1671490818549642
+ReCall :  0.06536998026738815
+map evaluation execution_time is :  3.458534816900889  m
+
+_________________
+
+test 10
+
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                # max_features=100000,
+                                max_df=0.40,
+                                min_df=5,
+                                ngram_range = (1,1),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  0.5227242350578308
+matrix_data size : 226 MB
+vectorizer : 17.2 MB
+
+
+evaluation: 102 qrel: 
+MAP :  0.1665792289137877
+MRR :  0.1671490818549642
+ReCall :  0.06536998026738815
+map evaluation execution_time is :  3.479838796456655  m
+
+_______________
+
+test 11
+
+vectorizer = TfidfVectorizer(
+                                preprocessor=my_preprocessor, 
+                                # lowercase=True,
+                                # max_features=100000,
+                                max_df=0.40,
+                                min_df=2,
+                                ngram_range = (1,1),
+                                stop_words = "english"
+
+                            )
+
+indexing execution_time is :  0.5227242350578308
+matrix_data size : 226 MB
+vectorizer : 17.2 MB
+
+
+evaluation: 102 qrel: 
+MAP :  0.16420450124494237
+MRR :  0.16388499844382196
+ReCall :  0.06447128745693065
+map evaluation execution_time is :  3.6804012457529702  m
 

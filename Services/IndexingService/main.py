@@ -20,7 +20,6 @@ import string
 import re
 
 
-i=0
 
 # Your preprocessing function
 def my_preprocessor(doc):
@@ -42,10 +41,6 @@ def my_preprocessor(doc):
 #     no_shapes_text = lower_text.translate(str.maketrans('', '', string.punctuation))
 
     
-#     if (i+1) % 10000 == 0:
-#             print(f'Processed {i+1} documents')
-#     i += 1
-
 #     return no_shapes_text
 
 # def get_wordnet_pos(tag_parameter):
@@ -78,9 +73,9 @@ def my_preprocessor(doc):
 ##########
 
 vectorizer = TfidfVectorizer(
-                                preprocessor=my_preprocessor, 
-                                lowercase=True,
-                                # max_features=5000,
+                                preprocessor=my_preprocessor,
+                                # lowercase=True,
+                                # max_features=100000,
                                 max_df=0.15,
                                 min_df=5,
                                 ngram_range = (1,1),
@@ -97,13 +92,13 @@ def load_LifestyleDataset_vectorizer():
 loaded_lifestyledataset_vectorizer = load_LifestyleDataset_vectorizer()
 
 
-# def load_ScienceDataset_vectorizer():
-#         with open('Data/ScienceDataset/vectorizer.pkl', 'rb') as file:
-#                 loaded_vectorizer = pickle.load(file)
-#                 print("vectorizer loaded ..")
-#                 return loaded_vectorizer
+def load_ScienceDataset_vectorizer():
+        with open('Data/ScienceDataset/vectorizer.pkl', 'rb') as file:
+                loaded_vectorizer = pickle.load(file)
+                print("vectorizer loaded ..")
+                return loaded_vectorizer
         
-# loaded_sciencedataset_vectorizer = load_ScienceDataset_vectorizer()
+loaded_sciencedataset_vectorizer = load_ScienceDataset_vectorizer()
 
 
 
@@ -112,6 +107,8 @@ loaded_lifestyledataset_vectorizer = load_LifestyleDataset_vectorizer()
 def vectories_docs(data: dict):
         print("dataSetName: ",data['dataSetName'])
         vectors = vectorizer.fit_transform(data['cleaned_docs'])
+        print("vectors.shape: ",vectors.shape)
+
 
         save_vectorizer(data['dataSetName'])
         save_matrix(data['dataSetName'],vectors)
@@ -145,12 +142,11 @@ def vectories_docs(data: dict):
 @app.post("/indexing/vectories_query")
 def vectories_query(data: dict):
         if(data['datasetIndex'] == 0):
+
                 np_array =  loaded_lifestyledataset_vectorizer.transform([data['query']]).toarray() 
-                # np_array =  loaded_sciencedataset_vectorizer.transform([data['query']]).toarray() 
 
         else:
-                np_array =  loaded_lifestyledataset_vectorizer.transform([data['query']]).toarray() 
-                # np_array =  loaded_sciencedataset_vectorizer.transform([data['query']]).toarray() 
+                np_array =  loaded_sciencedataset_vectorizer.transform([data['query']]).toarray() 
                 
         # print("query vector: ",np_array)
         # print("query vector to list: ",np_array)

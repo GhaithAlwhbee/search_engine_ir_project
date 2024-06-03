@@ -4,11 +4,6 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 import asyncio
 
-# read qrels  
-# P@K
-# REL (k)
-# AP@k
-# MAP @K
 
 import json
 from typing import List
@@ -43,7 +38,7 @@ class MapEvaluation:
                 )
 
                 self.listOfqrel.append(qrel_query)
-                if(i>1000):break
+                if(i>50):break
             print("qrel length : ",len(self.listOfqrel))
             # for x in self.listOfqrel:
             #     print(x)

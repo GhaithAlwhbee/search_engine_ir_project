@@ -57,9 +57,19 @@ class BuildIndex:
             Path = "Data/"+dataSetName+"/cleanedDataSte.pkl"
             with open(Path, 'rb') as file:
                 cleaned_dataset = pickle.load(file)
+            
+            # temp_dataset =[]
+            # i=0
+            # for doc in cleaned_dataset.json():
+            #     temp_dataset.append(doc)
+            #     i += 1
+            #     # if (i>10000): break  
+
             print("cleaned Dataset loaded ..")
+
             start_time = time.time()
             index_payload = {
+            # "cleaned_docs": dataset.json(),
             "cleaned_docs": cleaned_dataset.json(),
             "dataSetName": dataSetName
             }
